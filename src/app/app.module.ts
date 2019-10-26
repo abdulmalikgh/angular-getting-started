@@ -6,12 +6,14 @@ import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductModule } from './product/product.module';
+import { Error404Component } from './error-404.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { ProductModule } from './product/product.module';
     RouterModule.forRoot([
       {path:'welcome',component:HomeComponent},
       {path:'', redirectTo:'welcome',pathMatch:'full'},
-      {path:'**',redirectTo:'welcome',pathMatch:'full'}
+      {path:'**',component:Error404Component}
     ]),
     ProductModule
   ],
