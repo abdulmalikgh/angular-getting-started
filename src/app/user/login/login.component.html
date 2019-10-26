@@ -3,14 +3,14 @@
         Log In
     </div>
     <div class="card-body">
-        <form action="" class="form">
+        <form action="" class="form" #form = 'ngForm'>
             <label for="username"> User Name:</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" (ngModule) = "UserName">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" >
+            <input type="password" class="form-control" (ngModule)="PassWord">
             <button class=" btn btn-primary m-3" type="submit" >Log In </button>
             <button class="btn btn-secondary"> Cancel</button>
         </form>
-
+        {{form.UserName}}
     </div>
 </div>
