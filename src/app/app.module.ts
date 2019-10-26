@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductModule } from './product/product.module';
 import { Error404Component } from './error-404.component';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { Error404Component } from './error-404.component';
       {path:'', redirectTo:'welcome',pathMatch:'full'},
       {path:'**',component:Error404Component}
     ]),
-    ProductModule
+    ProductModule,
+    UserModule
   ],
   providers:[
     
