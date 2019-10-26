@@ -33,7 +33,7 @@ export class ProductListComponent implements OnInit{
       performFilter(filterBy:string):Iproduct[]{
         filterBy=filterBy.toLocaleLowerCase();
         return this.products.filter((product:Iproduct)=>
-          product.productName.toLocaleLowerCase().indexOf(filterBy) !==-1
+          product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1
         )
       }
       ngOnInit(){
@@ -41,6 +41,7 @@ export class ProductListComponent implements OnInit{
           products=>{
         this.products = products;
         this.filteredProducts = products;
+        console.log(this.products)
           }
         )
       }

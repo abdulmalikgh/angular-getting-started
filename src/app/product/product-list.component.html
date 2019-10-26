@@ -9,7 +9,7 @@
         <input type="text" name="" id="" [(ngModel)]='listFilter'>
       </div>
     </div>
-  
+
     <div class="row">
       <div class="col-md-6">
         <h4>filtered :{{listFilter}}
@@ -34,16 +34,16 @@
         </thead>
         <tbody>
           <tr *ngFor="let product of filteredProducts">
-            <td><img *ngIf='showImage' 
+            <td><img *ngIf='showImage'
                  [src] = 'product.imageUrl'
                  [title] ='product.productName'
-                 [style.width.px] = "imageWidth" 
+                 [style.width.px] = "imageWidth"
                  [style.margin.px] = "imageMargin"/>
                 </td>
             <a [routerLink]="['/products',product.productId]">{{product.productName}}</a>
             <td>{{product.productCode | lowercase | convertToSpaces:'-' }}</td>
             <td>{{product.releaseDate}}</td>
-            <td>{{product.price | currency:'USD':symbol:'1.2-2'}}</td>
+            <td>{{product.price | currency:'USD'}}</td>
             <td><pm-star [rating]='product.starRating'></pm-star></td>
           </tr>
         </tbody>
@@ -51,4 +51,3 @@
     </div>
   </div>
   </div>
-  
