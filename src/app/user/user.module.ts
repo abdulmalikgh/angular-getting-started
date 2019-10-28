@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 @NgModule({
     imports:[
-        FormsModule,
+       SharedModule,
         RouterModule.forChild([
          {path:'login',component: LoginComponent}
      ])
