@@ -1,13 +1,26 @@
 <div class="card">
     <div class="card-header">
-        Log In
+        {{ pageTitle }}
     </div>
     <div class="card-body">
-        <form action="" class="form" #form = 'ngForm'>
+        <form class="form" #loginForm="ngForm" (ngSubmit)="login(loginForm)" 
+               novalidate autocomplete="off"> 
             <label for="username"> User Name:</label>
-            <input type="text" class="form-control" (ngModule) = "UserName">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" (ngModule)="PassWord">
+            <input type="text" class="form-control" [(ngModel)] = "userName"
+                   id="userNameId" name="userName"
+                   placeholder="User Name (required)" required
+                   />
+  
+
+        <label for="password">Password:</label>
+        <input class="form-control"
+              id="passwordId"
+              type="password"
+              placeholder="Password (required)"
+              required
+              name="password"
+              [(ngModel)]="password"
+             />         
             <button class=" btn btn-primary m-3" type="submit" >Log In </button>
             <button class="btn btn-secondary"> Cancel</button>
         </form>

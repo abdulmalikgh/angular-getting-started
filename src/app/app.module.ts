@@ -10,6 +10,8 @@ import { ProductModule } from './product/product.module';
 import { Error404Component } from './error-404.component';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
+import { MessageModule } from './messages/message.module';
+import { AuthUserService } from './user/auth-user.service';
 
 
 
@@ -29,10 +31,11 @@ import { SharedModule } from './shared/shared.module';
     ]),
     SharedModule,
     ProductModule,
-    UserModule
+    UserModule,
+    MessageModule
   ],
   providers:[
-    
+    AuthUserService
   ],
   bootstrap: [AppComponent]
 })
